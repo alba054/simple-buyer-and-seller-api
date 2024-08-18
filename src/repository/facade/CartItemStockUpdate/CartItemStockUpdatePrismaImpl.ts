@@ -17,7 +17,7 @@ export class CartItemStockUpdatePrismaImpl extends CartItemStockUpdate {
         prismaDb.db.cart.update({
           where: { id: cart.id },
           data: {
-            status: isValid ? PAYMENT_STATUS.PAID : PAYMENT_STATUS.UNPAID,
+            status: isValid ? PAYMENT_STATUS.UNPAID : PAYMENT_STATUS.INPROCESS,
             orderStatusUpdated: Math.floor(new Date().getTime() / 1000),
           },
         }),

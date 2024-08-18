@@ -27,6 +27,7 @@ export const ListCartDTO = (cart: CartEntity) => {
       price: cart.item?.price,
       thumbnail: cart.item?.thumbnail,
     },
+    status: cart.status,
     quantity: cart.quantity,
   } as IListCartDTO;
 };

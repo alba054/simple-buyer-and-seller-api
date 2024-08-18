@@ -55,12 +55,12 @@ export class CartServiceImpl extends CartService {
       throw new NotFoundError(ERRORCODE.COMMON_NOT_FOUND, "cart's not found");
     }
 
-    if (cart.item?.author?.id !== userId) {
-      throw new BadRequestError(
-        ERRORCODE.BAD_REQUEST_ERROR,
-        "you are not the author of the item"
-      );
-    }
+    // if (cart.item?.author?.id !== userId) {
+    //   throw new BadRequestError(
+    //     ERRORCODE.BAD_REQUEST_ERROR,
+    //     "you are not the author of the item"
+    //   );
+    // }
 
     await this.cartItemStockUpdateRepository.updateCartOrderStatusAndItemStock(
       cart,
